@@ -12,7 +12,6 @@ class NotesController extends BaseController {
      */
     public function showNotes()
     {
-
         // Show notes if available
         $notes = Note::all();
         $this->layout->content = View::make('notes', array('notes'=> $notes));
