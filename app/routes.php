@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
 	return View::make('hello');
 });
@@ -20,4 +20,12 @@ Route::get('users', function()
 {
     $users = User::all();
 	return View::make('users')->with('users',$users);
-});
+}); */
+
+Route::get('/','NotesController@showNotes');
+
+Route::post('/notes/add', 'NotesController@addNotes');
+
+Route::post('/notes/remove', 'NotesController@deleteNotes');
+
+Route::post('/notes/update', 'NotesController@updateNotes');
