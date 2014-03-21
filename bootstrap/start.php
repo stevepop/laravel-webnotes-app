@@ -24,10 +24,12 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(function()
-{
-    return $_SERVER['APPLICATION_ENV'];
-});
+$env = $app->detectEnvironment(array(
+
+    'local' => array('steve-ubuntu'),
+
+));
+
 
 /*
 |--------------------------------------------------------------------------
