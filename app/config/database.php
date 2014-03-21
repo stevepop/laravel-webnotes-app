@@ -52,7 +52,16 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => $_ENV['DB_CONFIG'],
+		'mysql' => array(
+			'driver'    => 'mysql',
+			'host'      => $_env['host'],
+			'database'  => $_env['database'],
+			'username'  => $_env['username'],
+			'password'  => $_env['password'],
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
