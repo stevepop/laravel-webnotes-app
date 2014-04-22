@@ -16,7 +16,7 @@ Route::get('/home', function()
 	return View::make('hello');
 });
 
-Route::get('/users','UserController@getUsers');
+Route::get('/users','UserController@listAll');
 
 Route::get('/','NotesController@showNotes');
 
