@@ -11,16 +11,12 @@
 |
 */
 
-/*Route::get('/', function()
+Route::get('/home', function()
 {
 	return View::make('hello');
 });
 
-Route::get('users', function()
-{
-    $users = User::all();
-	return View::make('users')->with('users',$users);
-}); */
+Route::get('/users','UserController@getUsers');
 
 Route::get('/','NotesController@showNotes');
 
