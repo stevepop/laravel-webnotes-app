@@ -18,6 +18,11 @@ class NotesController extends BaseController {
         $this->layout->with('notes', $notes);
     }
 
+    public function getNotes()
+    {
+        return Response::json(Note::get());
+    }
+
     public function addNotes()
     {
         // Add new notes
@@ -36,9 +41,14 @@ class NotesController extends BaseController {
 
     public function deleteNotes()
     {
+        
         if(Request::isMethod('post'))
         {
-            $id = Input::get('id');
+            // I need the raw request so I get it from the request instance
+            $request = Request::instance();
+            // Now get the content which is the note id
+            $id = $request->getContent();
+            
             $note = Note::find($id);
             if($note->delete())
             {
@@ -56,7 +66,7 @@ class NotesController extends BaseController {
         {
             $params = Input::all();
             $note_id = $params['id'];
-            $note_content = $params['content'];
+            $note_content = $params['note'];
 
             $note = Note::find($note_id);
             $note->note = $note_content;

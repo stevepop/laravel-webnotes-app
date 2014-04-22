@@ -21,8 +21,11 @@ Route::get('users', function()
     $users = User::all();
 	return View::make('users')->with('users',$users);
 }); */
+Blade::setContentTags('<%', '%>');  // Change Laravel Tags because of conflict with Angular
 
 Route::get('/','NotesController@showNotes');
+
+Route::get('/notes/list','NotesController@getNotes');
 
 Route::post('/notes/add', 'NotesController@addNotes');
 
