@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Sticky Notes created using Laravel Framework</title>
+    <title>Online Sticky Notes created using Laravel Framework</title>
     <!-- Styles -->
     {{ HTML::style('css/bootstrap.min.css') }}
     {{ HTML::style('css/style.css') }}
